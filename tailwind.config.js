@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     `./components/**/*.{vue,js,ts}`,
@@ -21,7 +20,7 @@ module.exports = {
       colors: {
         gspark: {
           light: '#f9f9f9',
-          dark: '#212121',
+          black: '#212121',
           blue: '#2e3a8c',
           green: '#3b755f',
           beige: '#f2ebdb',
