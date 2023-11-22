@@ -31,7 +31,7 @@ const emit = defineEmits(['update:modelValue']);
   width: 40px;
   height: 20px;
   background-color: #ddd;
-  transition: 0.2s;
+  transition: 150ms;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -44,7 +44,7 @@ const emit = defineEmits(['update:modelValue']);
   left: 2px;
   top: 2px;
   background: white;
-  transition: 0.2s;
+  transition: 150ms;
   border-radius: 50%;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   /* outline: 5px solid #afc6bd; */
