@@ -39,7 +39,7 @@ const selectedTheme = computed(() => {
   }
 });
 
-const handleInputChange = () => {
+const handleBadgeActivation = () => {
   emit('change', badgeActive.value);
 };
 </script>
@@ -89,7 +89,7 @@ const handleInputChange = () => {
         <InputToggle
           :input-id="props.id"
           v-model="badgeActive"
-          @update:model-value="handleInputChange"
+          @update:model-value="handleBadgeActivation"
         />
       </div>
     </div>
