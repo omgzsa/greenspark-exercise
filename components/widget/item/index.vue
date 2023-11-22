@@ -1,5 +1,6 @@
 <script setup>
 const badgeActive = ref(false);
+const isLinked = ref(false);
 
 const props = defineProps({
   id: Number,
@@ -55,11 +56,11 @@ const handleInputChange = () => {
     </div>
     <div class="py-2 space-y-2">
       <!-- LINK TO PUBLIC PROFILE INPUT / TOOLTIP -->
-      <label class="flex items-center gap-2">
+      <div class="flex items-center gap-2">
         <p class="text-gspark-green">Link to public profile</p>
-        <!-- <Tooltip /> -->
-        <input class="ml-auto" type="checkbox" />
-      </label>
+        <Tooltip />
+        <InputCheckbox v-model="isLinked" :input-id="props.id" />
+      </div>
 
       <!-- BADGE COLOUR INPUT FOR THEME CHANGE -->
       <div class="flex items-center justify-between">
