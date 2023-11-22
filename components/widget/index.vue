@@ -1,11 +1,14 @@
 <script setup>
-const availableColors = ['white', 'black', 'blue', 'green', 'beige'];
-
 const props = defineProps({
   items: {
     type: Array,
     required: true,
   },
+});
+
+// set the available colors that aren't present in the api
+const availableColors = computed(() => {
+  return ['blue', 'green', 'beige', 'white', 'black'];
 });
 </script>
 
@@ -25,6 +28,7 @@ const props = defineProps({
         :action="widget.action"
         :is-active="widget.active"
         :selected-color="widget.selectedColor"
+        :available-colors="availableColors"
       />
     </div>
   </div>
