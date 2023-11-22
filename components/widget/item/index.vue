@@ -45,7 +45,7 @@ const handleInputChange = () => {
 
 <template>
   <div class="w-[221px] space-y-2">
-    <div class="rounded-md px-2.5 py-3" :class="selectedTheme">
+    <div class="rounded-md px-2.5 py-3 transition" :class="selectedTheme">
       <WidgetItemHeader>
         <template #lead> This product {{ action }} </template>
         <template #title>
