@@ -59,7 +59,7 @@ const handleInputChange = () => {
       <div class="flex items-center gap-2">
         <p class="text-gspark-green">Link to public profile</p>
         <Tooltip />
-        <InputCheckbox v-model="isLinked" :input-id="props.id" />
+        <InputCheckbox v-model="isLinked" :id="props.id + 1" />
       </div>
 
       <!-- BADGE COLOUR INPUT FOR THEME CHANGE -->
