@@ -6,7 +6,7 @@ const { data } = await useFetch(
 
 <template>
   <div class="px-4 space-y-16">
-    <!-- <h1 class="text-4xl text-gspark-green">Hello Greenspark 🌿</h1> -->
+    <h1 class="text-4xl text-center text-gspark-green">Hello Greenspark 🌿</h1>
     <Widget :items="data" />
   </div>
 </template>
