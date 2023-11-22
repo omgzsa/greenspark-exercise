@@ -1,7 +1,7 @@
 <script setup>
 const props = defineProps({
   modelValue: { type: [Array, Boolean] },
-  inputId: { type: [String, Number] },
+  id: { type: [String, Number] },
   value: { type: [Boolean, Object] },
   label: { type: String },
 });
@@ -21,12 +21,12 @@ const model = computed({
 <template>
   <div class="inline-flex items-center ml-auto">
     <label
-      class="flex items-center transition-all cursor-pointer"
+      class="relative flex items-center transition-all cursor-pointer"
       for="checkbox"
     >
       <input
         type="checkbox"
-        :id="'checkbox' + inputId"
+        :id="'checkbox' + id"
         v-model="model"
         :value="value"
         class="before:content[''] peer relative h-[18px] w-[18px] cursor-pointer appearance-none rounded-sm border-2 border-gspark-black hover:border-gspark-hover transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 checked:border-gspark-green checked:bg-gspark-green hover:before:opacity-10 before:bg-gspark-green checked:hover:before:opacity-0"
