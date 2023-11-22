@@ -5,38 +5,50 @@
 @tailwind utilities;
 
 @layer base {
-  /* :root {
-    
-  } */
+  :root {
+    --fs-xl: 30px;
+    --fs-lg: 17.86px;
+    --fs-base: 14px;
+    --fs-sm: 12.41px;
+
+    --fw-bold: 700;
+    --fw-semibold: 600;
+    --fw-regular: 400;
+
+    --lh-xl: 36px;
+    --lh-lg: 21.71px;
+    --lh-base: 17px;
+    --lh-sm: 15.07px;
+  }
 
   h3 {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 36px;
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-xl);
   }
 
   .widget-lead {
-    font-size: 12.41px;
-    font-weight: 400;
-    line-height: 15.07px;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-sm);
   }
 
   .widget-title {
-    font-size: 17.86px;
-    font-weight: 600;
-    line-height: 21.71px;
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-lg);
   }
 
   p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 17px;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-base);
   }
 
   a {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 17px;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-base);
     color: #3b755f;
   }
 }
