@@ -53,15 +53,13 @@ const tooltipLeft = () => {
       class="flex flex-col px-4 py-6 space-y-2 text-center bg-white rounded-md shadow-md w-[248px]"
     >
       <p>
-        This widget links directly to your public profile so that you can easily
-        share your impact with your customers. Turn it off here if you do not
-        want the badge to link to it.
+        <slot name="content" />
       </p>
       <a
         class="font-semibold transition text-gspark-green hover:text-gspark-green/80"
         href="/"
-        >View Public Profile</a
-      >
+        ><slot name="link"
+      /></a>
     </div>
   </Transition>
 </template>

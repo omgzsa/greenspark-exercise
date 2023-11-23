@@ -65,7 +65,14 @@ watch(
       <!-- LINK TO PUBLIC PROFILE INPUT / TOOLTIP -->
       <div class="flex items-center gap-2">
         <p class="text-gspark-green">Link to public profile</p>
-        <Tooltip />
+        <Tooltip>
+          <template #content>
+            This widget links directly to your public profile so that you can
+            easily share your impact with your customers. Turn it off here if
+            you do not want the badge to link to it.
+          </template>
+          <template #link> View Public Profile </template>
+        </Tooltip>
         <InputCheckbox
           :id="cbId"
           :model-value="isLinked"
