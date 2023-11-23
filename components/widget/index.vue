@@ -6,10 +6,20 @@ const props = defineProps({
   },
 });
 
+const activatedBadgeId = ref(null);
+
 // set the available colors that aren't present in the api
 const availableColors = computed(() => {
   return ['blue', 'green', 'beige', 'white', 'black'];
 });
+
+// deactivate all the badges except the one that is active
+const handleDeactivateOtherBadges = (id) => {
+  activatedBadgeId.value = id;
+  props.items.forEach((item) => {
+    item.active = item.id === id;
+  });
+};
 </script>
 
 <template>
@@ -26,9 +36,11 @@ const availableColors = computed(() => {
         :type="widget.type"
         :amount="widget.amount"
         :action="widget.action"
+        :is-linked="widget.linked"
         :is-active="widget.active"
         :selected-color="widget.selectedColor"
         :available-colors="availableColors"
+        @activate-badge="handleDeactivateOtherBadges"
       />
     </div>
   </div>
