@@ -1,19 +1,20 @@
 <script setup>
-const badgeActive = ref(false);
-const isLinked = ref(false);
+import { nanoid } from 'nanoid';
+
+const cbId = nanoid();
 
 const props = defineProps({
   id: Number,
   type: String,
   amount: Number,
   action: String,
-  // isLinked: Boolean,
+  isLinked: Boolean,
   isActive: Boolean,
   selectedColor: String,
   availableColors: Array,
 });
 
-const emit = defineEmits(['change']);
+const emit = defineEmits(['activate-badge']);
 
 // computed prop to show/hide the measure unit (kgs)
 const showMeasure = computed(() => {
@@ -39,9 +40,15 @@ const selectedTheme = computed(() => {
   }
 });
 
-const handleBadgeActivation = () => {
-  emit('change', badgeActive.value);
-};
+// watch for changes in the props.isActive and emit the event
+watch(
+  () => props.isActive,
+  (newValue) => {
+    if (newValue) {
+      emit('activate-badge', props.id);
+    }
+  }
+);
 </script>
 
 <template>
@@ -59,7 +66,11 @@ const handleBadgeActivation = () => {
       <div class="flex items-center gap-2">
         <p class="text-gspark-green">Link to public profile</p>
         <Tooltip />
-        <InputCheckbox v-model="isLinked" :id="props.id + 1" />
+        <InputCheckbox
+          :id="cbId"
+          :model-value="isLinked"
+          @update:model-value="isLinked = $event"
+        />
       </div>
 
       <!-- BADGE COLOUR INPUT FOR THEME CHANGE -->
@@ -88,8 +99,8 @@ const handleBadgeActivation = () => {
         <p class="text-gspark-green">Activate badge</p>
         <InputToggle
           :input-id="props.id"
-          v-model="badgeActive"
-          @update:model-value="handleBadgeActivation"
+          :modelValue="isActive"
+          @update:model-value="isActive = $event"
         />
       </div>
     </div>
