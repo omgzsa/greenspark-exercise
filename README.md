@@ -24,12 +24,12 @@ Product widget data is fetched from custom api route through a pinia store. For 
 
 - Run the dev server: `npm run dev`
 - Navigate to `http://localhost:3000` in your browser
-
 - run build: `npm run build`
 - check out with `node .output/server/index.mjs`
-
 - run generate: `npm run generate`
 - check out with `npx serve .output/public`
+
+If you don't want clone, dev, build, serve ... or you don't have node installed, you can check out the deployed version [here](https://cozy-kleicha-181ea7.netlify.app/).
 
 ## Features
 
@@ -38,13 +38,11 @@ Product widget data is fetched from custom api route through a pinia store. For 
 - Upon page load, the application fetches product widget DTOs from the API.
 - Displays the initial properties of each widget.
 
-### Customizing Widgets
+### Widget behavior
 
-Users can customize widgets by:
-
-- Changing colors
-- Setting the active state
 - Linking/unlinking to the public profile
+- Tooltip visibility is as expected, user able to click the link
+- Changing colors
 - Only one widget can have the active state at a time.
 
 ## Contact
