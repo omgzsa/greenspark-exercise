@@ -12,9 +12,9 @@ UI Library: Tailwind CSS
 
 ## Installation
 
-Clone the repository: `git clone https://github.com/omgzsa/greenspark-exercise`
-Navigate to the project directory: `cd greenspark-exercise`
-Install dependencies: `npm install`
+- Clone the repository: `git clone https://github.com/omgzsa/greenspark-exercise`
+- Navigate to the project directory: `cd greenspark-exercise`
+- Install dependencies: `npm install`
 
 ## API Integration
 
@@ -43,16 +43,6 @@ Users can customize widgets by:
 Active State Management
 Only one widget can have the active state at a time.
 
-## Folder Structure
+## Contact
 
-/src
-|-- assets
-|-- components
-|-- plugins
-|-- views
-|-- App.vue
-|-- main.js
-|-- ...
-
-Contact
 For any questions or clarifications, feel free to reach out here.
