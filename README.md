@@ -29,7 +29,7 @@ Product widget data is fetched from custom api route through a pinia store. For 
 - run generate: `npm run generate`
 - check out with `npx serve .output/public`
 
-If you don't want clone, dev, build, serve ... or you don't have node installed, you can check out the deployed version <a href="https://cozy-kleicha-181ea7.netlify.app/" target="_blank">here</a>.
+If you don't want to clone, dev, build, serve ... or you don't have node installed, you can check out the deployed version <a href="https://cozy-kleicha-181ea7.netlify.app/" target="_blank">here</a>.
 
 ## Features
 
