@@ -1,7 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', '@vueuse/nuxt'],
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.NUXT_API_URL,
+    },
+  },
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+  ],
   googleFonts: {
     families: {
       Cabin: [400, 600, 700],
@@ -11,5 +21,8 @@ export default defineNuxtConfig({
     preload: false,
     download: true,
     base64: false,
+  },
+  pinia: {
+    autoImports: ['defineStore', 'acceptHMRUpdate'],
   },
 });
