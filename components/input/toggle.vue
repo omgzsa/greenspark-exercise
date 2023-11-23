@@ -5,22 +5,26 @@ const props = defineProps({
 });
 
 const emit = defineEmits(['update:modelValue']);
+
+const model = computed({
+  get() {
+    return props.modelValue;
+  },
+  set(value) {
+    emit('update:modelValue', value);
+  },
+});
 </script>
 
 <template>
   <div class="checkbox-slider">
-    <input
-      type="checkbox"
-      :checked="modelValue"
-      @change="emit('update:modelValue', $event.target.checked)"
-      :id="'checkbox' + inputId"
-    />
+    <input type="checkbox" v-model="model" :id="'checkbox' + inputId" />
     <label :for="'checkbox' + inputId" class="slider"></label>
     <label :for="'checkbox' + inputId"><slot /></label>
   </div>
 </template>
 
-<style>
+<style scoped>
 .checkbox-slider {
   display: flex;
   align-items: center;
