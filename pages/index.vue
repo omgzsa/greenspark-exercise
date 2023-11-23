@@ -1,11 +1,11 @@
 <script setup>
-const { data } = await useFetch(
-  'https://api.mocki.io/v2/016d11e8/product-widgets'
-);
+import { useWidgetStore } from '@/stores/widgets';
 
-// const { data: widgets } = await useFetch('/api/widgets');
+const store = useWidgetStore();
+const { fetchWidgets } = store;
+const { widgets } = storeToRefs(store);
 
-// console.log(widgets);
+await fetchWidgets();
 
 useHead({
   title: 'Greenspark',
@@ -15,6 +15,6 @@ useHead({
 <template>
   <div class="px-4 space-y-16">
     <!-- <h1 class="text-4xl text-center text-gspark-green">Hello Greenspark 🌿</h1> -->
-    <Widget :items="data" />
+    <Widget :items="widgets.value" />
   </div>
 </template>
