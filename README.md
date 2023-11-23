@@ -6,9 +6,9 @@ This front-end service allows users to display and customize product widgets. Th
 
 ## Technical Stack
 
-Framework/Library: Nuxt 3
-State Management: Pinia
-UI Library: Tailwind CSS
+- Framework/Library: Nuxt 3
+- State Management: Pinia
+- UI Library: Tailwind CSS
 
 ## Installation
 
@@ -18,12 +18,18 @@ UI Library: Tailwind CSS
 
 ## API Integration
 
-Product widget data is fetched from custom api route. For that one should create a .env file in the root directory and add the provided mock api. `NUXT_API_URL=<provided_endpoint>`
+Product widget data is fetched from custom api route through a pinia store. For that, one should create a .env file in the root directory and add the provided mock api. `NUXT_API_URL=<provided_endpoint>`
 
 ## Usage
 
-Run the application: npm run serve
-Open the application in your browser: http://localhost:8080
+- Run the dev server: `npm run dev`
+- Navigate to `http://localhost:3000` in your browser
+
+- run build: `npm run build`
+- check out with `node .output/server/index.mjs`
+
+- run generate: `npm run generate`
+- check out with `npx serve .output/public`
 
 ## Features
 
@@ -39,9 +45,7 @@ Users can customize widgets by:
 - Changing colors
 - Setting the active state
 - Linking/unlinking to the public profile
-
-Active State Management
-Only one widget can have the active state at a time.
+- Only one widget can have the active state at a time.
 
 ## Contact
 
