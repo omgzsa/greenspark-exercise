@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     families: {
       Cabin: [400, 600, 700],
     },
+    // google fonts module was slow to load
     prefetch: false,
     preconnect: false,
     preload: false,
