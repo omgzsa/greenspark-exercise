@@ -21,6 +21,8 @@
     "@floating-ui/vue": "^1.0.2",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/tailwindcss": "^6.9.5",
-    "nanoid": "^5.0.3"
+    "@pinia/nuxt": "^0.5.1",
+    "nanoid": "^5.0.3",
+    "pinia": "^2.1.7"
   }
 }
