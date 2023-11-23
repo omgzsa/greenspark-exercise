@@ -14,7 +14,7 @@ const props = defineProps({
   availableColors: Array,
 });
 
-const emit = defineEmits(['activate-badge']);
+const emit = defineEmits(['activate-widget']);
 
 // computed prop to show/hide the measure unit (kgs)
 const showMeasure = computed(() => {
@@ -45,7 +45,7 @@ watch(
   () => props.isActive,
   (newValue) => {
     if (newValue) {
-      emit('activate-badge', props.id);
+      emit('activate-widget', props.id);
     }
   }
 );
