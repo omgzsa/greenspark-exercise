@@ -2,6 +2,7 @@
 const props = defineProps({
   modelValue: { type: [Array, Boolean] },
   id: { type: String },
+  isDisabled: Boolean,
 });
 
 const emit = defineEmits(['update:modelValue']);
@@ -27,6 +28,8 @@ const model = computed({
         :id="'checkbox_' + id"
         v-model="model"
         class="before:content[''] peer relative h-[18px] w-[18px] cursor-pointer appearance-none rounded-sm border-2 border-gspark-black hover:border-gspark-hover transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-10 before:w-10 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:opacity-0 checked:border-gspark-green checked:bg-gspark-green hover:before:opacity-10 before:bg-gspark-green checked:hover:before:opacity-0"
+        :disabled="isDisabled"
+        :class="{ 'cursor-not-allowed opacity-50': isDisabled }"
       />
       <!-- tick in the checkbox w/ styles-->
       <div
