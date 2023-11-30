@@ -20,6 +20,13 @@ const handleDeactivateOtherWidgets = (id) => {
     item.active = item.id === id;
   });
 };
+
+const handleColorSelection = (color, widgetId) => {
+  const activeWidget = props.items.find((item) => item.active);
+  if (activeWidget.id === widgetId) {
+    activeWidget.selectedColor = color;
+  }
+};
 </script>
 
 <template>
@@ -41,6 +48,7 @@ const handleDeactivateOtherWidgets = (id) => {
         :selected-color="widget.selectedColor"
         :available-colors="availableColors"
         @activate-widget="handleDeactivateOtherWidgets"
+        @select-color="(color) => handleColorSelection(color, widget.id)"
       />
     </div>
   </div>
