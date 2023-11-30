@@ -14,7 +14,7 @@ const props = defineProps({
   availableColors: Array,
 });
 
-const emit = defineEmits(['activate-widget']);
+const emit = defineEmits(['activate-widget', 'select-color']);
 
 // computed prop to show/hide the measure unit (kgs)
 const showMeasure = computed(() => {
@@ -46,6 +46,7 @@ watch(
   (newValue) => {
     if (newValue) {
       emit('activate-widget', props.id);
+      emit('select-color', props.selectedColor);
     }
   }
 );
@@ -77,6 +78,7 @@ watch(
           :id="cbId"
           :model-value="isLinked"
           @update:model-value="isLinked = $event"
+          :is-disabled="!props.isActive"
         />
       </div>
 
@@ -94,8 +96,10 @@ watch(
               'bg-gspark-light hover:bg-gspark-light/80': color === 'white',
               'bg-gspark-black hover:bg-gspark-black/80': color === 'black',
               'border-2 border-gspark-frame': color === selectedColor,
+              'cursor-not-allowed': !props.isActive,
             }"
-            @click="selectedColor = color"
+            @click="emit('select-color', color)"
+            :disabled="!props.isActive"
             class="w-4 h-4 transition cursor-pointer"
           ></div>
         </div>
